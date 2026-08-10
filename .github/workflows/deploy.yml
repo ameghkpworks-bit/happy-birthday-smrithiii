@@ -35,10 +35,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Check dist folder
+      - name: Check output folder
         run: |
-          echo "Contents of dist:"
-          ls -la dist
+          echo "Contents of .output/public:"
+          ls -la .output/public
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -46,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./.output/public
 
   deploy:
     needs: build
