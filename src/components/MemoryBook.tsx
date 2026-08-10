@@ -1,6 +1,8 @@
 import { forwardRef, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { Petals, Sparkles } from "./Atmosphere";
+const imagePath = (name: string) =>
+  `${import.meta.env.BASE_URL}images/${name}`;
 
 const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; tone?: string }>(
   ({ children, tone }, ref) => (
@@ -286,21 +288,21 @@ export function MemoryBook() {
             rotate={-6}
             caption="your favourite"
             gradient="linear-gradient(135deg, oklch(0.85 0.08 80), oklch(0.78 0.10 60))"
-            image="public/images/pic1.jpg"
+            image={imagePath("pic1.jpg")}
           />
           <PolaroidFrame
             className="right-4 top-48"
             rotate={5}
             caption="my favourite"
             gradient="linear-gradient(135deg, oklch(0.83 0.07 18), oklch(0.72 0.10 18))"
-            image="public/images/pic2.jpg"
+            image={imagePath("pic2.jpg")}
           />
           <PolaroidFrame
             className="left-16 bottom-8"
             rotate={2}
             caption="our quiet morning"
             gradient="linear-gradient(135deg, oklch(0.82 0.05 145), oklch(0.68 0.06 145))"
-            image="public/images/pic3.jpg"
+            image={imagePath("pic3.jpg")}
           />
 
           {/* tiny doodle arrow */}
@@ -392,21 +394,21 @@ export function MemoryBook() {
     className="left-6 top-32"
     rotate={-4}
     caption="your beautiful smile"
-    image="/images/pic4.jpg"
+    image={imagePath("pic4.jpg")}
   />
 
   <PolaroidFrame
     className="right-4 top-48"
     rotate={6}
     caption="my favorite person"
-    image="/images/pic5.jpg"
+    image={imagePath("pic5.jpg")}
   />
 
   <PolaroidFrame
     className="left-16 bottom-8"
     rotate={2}
     caption="always us"
-    image="/images/pic6.jpg"
+    image={imagePath("pic6.jpg")}
   />
 
   <svg
